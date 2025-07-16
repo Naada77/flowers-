@@ -1,4 +1,22 @@
 
+.animated-title {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(90deg, #ff69b4, #ffb6c1, #ba55d3, #9a4c88);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorFlow 5s linear infinite;
+}
+
+@keyframes colorFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
 .test{
      background-image: url(./images/p1.jpg);
      background-size: cover;
@@ -9,6 +27,22 @@
     text-align: center;
     padding-top: 10% ;
 }
+.test button {
+  background-color: #9a4c88;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.test button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
 
 .parent{
     display: flex;
@@ -37,11 +71,26 @@
 
 
 .icon-row {
-  display: flex;
-  align-items: center;
- 
-  color: #333;
+  opacity: 0;
+  animation: fadeInLeft 1s forwards;
 }
+
+.icon-row:nth-child(1) { animation-delay: 0.3s; }
+.icon-row:nth-child(2) { animation-delay: 0.6s; }
+.icon-row:nth-child(3) { animation-delay: 0.9s; }
+.icon-row:nth-child(4) { animation-delay: 1.2s; }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 
 .icon-row i {
@@ -94,7 +143,15 @@
   width: 100%;
   height: auto;
   border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.flowers-container .item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
 
 
 .flowers-container .item h3 {
@@ -186,7 +243,21 @@
   padding: 2rem 1rem;
   color: #5a3e36;
   text-align: center;
+  box-shadow: 0 -5px 10px rgba(0,0,0,0.05);
+  animation: fadeInUp 1s ease-in-out;
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .footer-container {
   display: flex;
